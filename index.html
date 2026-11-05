@@ -1,17 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Segunda Guerra Mundial | Scrollytelling</title>
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body>
-    <main id="app">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1939-1945 | La Segunda Guerra Mundial</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+
+  <!-- 1. INTRODUCCIÓN HERO: Entrada a la experiencia -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="tagline">1939 — 1945</p>
       <h1>La Segunda Guerra Mundial</h1>
-      <p>Proyecto interactivo de Scrollytelling en construcción.</p>
-    </main>
-    <!-- En Vite conectamos directamente nuestro script principal como módulo ES -->
-    <script type="module" src="/src/main.js"></script>
-  </body>
+      <p class="subtitle">Una crónica visual interactiva del conflicto más devastador de la historia.</p>
+      <span class="scroll-indicator">↓ Desplaza hacia abajo para comenzar ↓</span>
+    </div>
+  </header>
+
+  <!-- 2. CONTENEDOR PRINCIPAL DE SCROLLYTELLING -->
+  <!-- Este elemento agrupa la capa visual y las tarjetas narrativas -->
+  <section id="scrolly">
+
+    <!-- Capa Visual: Se quedará pegada en pantalla gracias a position: sticky -->
+    <figure class="sticky-graphic">
+      <div id="graphic-content" class="graphic-box">
+        <p class="graphic-placeholder">Cargando visualización...</p>
+      </div>
+    </figure>
+
+    <!-- Capa Narrativa: Tarjetas que se desplazan sobre la visualización -->
+    <article class="scrolly-steps">
+
+      <div class="step" data-step="1">
+        <span class="step-date">1 de Septiembre, 1939</span>
+        <h2>Invasión de Polonia</h2>
+        <p>Las tropas alemanas cruzan la frontera polaca utilizando la táctica de la <em>Blitzkrieg</em> (guerra
+          relámpago). Gran Bretaña y Francia declaran la guerra a Alemania.</p>
+      </div>
+
+      <div class="step" data-step="2">
+        <span class="step-date">Junio, 1940</span>
+        <h2>La Caída de Francia</h2>
+        <p>En tan solo seis semanas, las fuerzas del Eje doblegan las defensas aliadas. Se firma el armisticio y París
+          cae bajo ocupación militar.</p>
+      </div>
+
+      <div class="step" data-step="3">
+        <span class="step-date">Junio, 1941</span>
+        <h2>Operación Barbarroja</h2>
+        <p>Alemania rompe el pacto de no agresión y lanza la mayor invasión militar terrestre de la historia contra la
+          Unión Soviética.</p>
+      </div>
+
+      <div class="step" data-step="4">
+        <span class="step-date">Diciembre, 1941</span>
+        <h2>Ataque a Pearl Harbor</h2>
+        <p>La aviación imperial japonesa bombardea por sorpresa la base naval estadounidense en Hawái, provocando la
+          entrada formal de Estados Unidos en el conflicto.</p>
+      </div>
+
+    </article>
+
+  </section>
+
+  <!-- 3. CIERRE / FOOTER -->
+  <footer class="footer">
+    <p>Fin del prólogo. Proyecto desarrollado con Vanilla JS y Vite.</p>
+  </footer>
+
+  <!-- Lógica de la aplicación -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
