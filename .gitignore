@@ -1,0 +1,10 @@
+# Dependencias instaladas
+node_modules/
+
+# Archivos de compilación para producción
+dist/
+
+# Archivos de entorno y logs
+*.local
+npm-debug.log*
+.DS_Store
