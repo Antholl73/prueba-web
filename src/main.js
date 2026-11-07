@@ -1,5 +1,5 @@
 // src/main.js
-import scrollama from 'scrollama';
+import scrollama from "scrollama";
 
 // ========================================================
 // 1. DATOS HISTÓRICOS DE CADA PASO
@@ -9,31 +9,35 @@ import scrollama from 'scrollama';
 const stepData = {
     1: {
         title: "1939: Invasión de Polonia",
-        description: "Comienza la Blitzkrieg. La infantería mecanizada y la Luftwaffe destruyen las líneas defensivas en semanas.",
-        color: "#8b0000" // Rojo oscuro militar
+        description:
+            "Comienza la Blitzkrieg. La infantería mecanizada y la Luftwaffe destruyen las líneas defensivas en semanas.",
+        color: "#8b0000", // Rojo oscuro militar
     },
     2: {
         title: "1940: La Caída de Francia",
-        description: "Las Ardenas son flanqueadas. Las fuerzas aliadas son evacuadas en Dunkerque y París queda bajo control nazi.",
-        color: "#2f4f4f" // Gris pizarra
+        description:
+            "Las Ardenas son flanqueadas. Las fuerzas aliadas son evacuadas en Dunkerque y París queda bajo control nazi.",
+        color: "#2f4f4f", // Gris pizarra
     },
     3: {
         title: "1941: Operación Barbarroja",
-        description: "Tres millones de soldados del Eje invaden la URSS a lo largo de un frente de casi 3.000 kilómetros.",
-        color: "#800020" // Borgoña / Sangre
+        description:
+            "Tres millones de soldados del Eje invaden la URSS a lo largo de un frente de casi 3.000 kilómetros.",
+        color: "#800020", // Borgoña / Sangre
     },
     4: {
         title: "1941: Pearl Harbor",
-        description: "El ataque sorpresa en el Pacífico despierta al gigante industrial: Estados Unidos entra formalmente en la contienda.",
-        color: "#1c3b57" // Azul marino naval
-    }
+        description:
+            "El ataque sorpresa en el Pacífico despierta al gigante industrial: Estados Unidos entra formalmente en la contienda.",
+        color: "#1c3b57", // Azul marino naval
+    },
 };
 
 // ========================================================
 // 2. ELEMENTOS DEL DOM
 // ========================================================
-const graphicBox = document.getElementById('graphic-content');
-const stepElements = document.querySelectorAll('.step');
+const graphicBox = document.getElementById("graphic-content");
+const stepElements = document.querySelectorAll(".step");
 
 // ========================================================
 // 3. INICIALIZACIÓN DE SCROLLAMA
@@ -43,15 +47,15 @@ const scroller = scrollama();
 function initScrollytelling() {
     scroller
         .setup({
-            step: '#scrolly article .step', // Qué elementos vigilar
-            offset: 0.5,                    // Punto gatillo: a la mitad exacta de la pantalla (50%)
-            debug: true                     // ¡Línea de calibración visual! La usaremos para aprender
+            step: "#scrolly article .step", // Qué elementos vigilar
+            offset: 0.9, // Punto gatillo: a la mitad exacta de la pantalla (50%)
+            debug: true, // ¡Línea de calibración visual! La usaremos para aprender
         })
         .onStepEnter(handleStepEnter)
         .onStepExit(handleStepExit);
 
     // Si el usuario redimensiona la ventana, recalculamos las posiciones
-    window.addEventListener('resize', scroller.resize);
+    window.addEventListener("resize", scroller.resize);
 }
 
 // ========================================================
@@ -67,8 +71,8 @@ function handleStepEnter(response) {
     const currentInfo = stepData[stepNumber];
 
     // 1. Resaltamos la tarjeta activa y apagamos las demás
-    stepElements.forEach(el => el.classList.remove('is-active'));
-    response.element.classList.add('is-active');
+    stepElements.forEach((el) => el.classList.remove("is-active"));
+    response.element.classList.add("is-active");
 
     // 2. Si tenemos datos para este paso, actualizamos la capa visual
     if (currentInfo) {
@@ -89,7 +93,9 @@ function handleStepEnter(response) {
  * Se ejecuta cuando una tarjeta abandona el punto de activación
  */
 function handleStepExit(response) {
-    console.log(`Saliendo del paso ${response.element.dataset.step} hacia: ${response.direction}`);
+    console.log(
+        `Saliendo del paso ${response.element.dataset.step} hacia: ${response.direction}`,
+    );
 }
 
 // Arrancamos la interacción
